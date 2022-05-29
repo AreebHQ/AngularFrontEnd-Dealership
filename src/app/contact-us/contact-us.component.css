@@ -1,0 +1,8 @@
+.contact-us .map {
+    overflow: hidden;
+    border-radius: 4px;
+}
+hr.rounded {
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
+  }

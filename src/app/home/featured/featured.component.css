@@ -1,0 +1,15 @@
+hr.rounded {
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
+  }
+  
+ .jumbotron{
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: cover;
+
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 100px;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+  }

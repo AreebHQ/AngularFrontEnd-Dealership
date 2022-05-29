@@ -1,0 +1,25 @@
+     <!-- Banner -->
+  <div class="container">
+    <div class="jumbotron jumbotron-fluid" style="background-image: url(../../../assets/images/banner.jpg);">
+    <br><br><br>
+    
+        
+    <!-- Divider -->		
+  </div>  <hr class="rounded"> </div>
+
+
+     <!-- Car Cards -->
+<div class="container col-12 d-flex justify-content-center">  			   
+    <div class="row col-10"> 
+        <div class="card-group d-flex justify-content-center">
+           <div class="col-3 card-deck text-center" *ngFor="let car of cars">
+                <img class="card-img-top" src="../assets/{{car.image}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"> {{car.year}} </h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{car.model.name}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{car.salePrice}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
