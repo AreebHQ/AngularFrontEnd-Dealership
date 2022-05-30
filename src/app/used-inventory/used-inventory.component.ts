@@ -1,4 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Car } from '../Car';
+import { CarService } from '../car.service';
+import { searchQuery } from '../CarSearchQueryModel';
 
 @Component({
   selector: 'app-used-inventory',
@@ -7,9 +11,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsedInventoryComponent implements OnInit {
 
-  constructor() { }
+  car : Car;
+  isCollapsed: boolean = false;
 
-  ngOnInit(): void {
+  public cars : Car[] = [];
+
+ constructor(private carservice:CarService) { }
+
+ ngOnInit(): void {
+   this.getUsedCars();
+ }
+
+ public getUsedCars():void{
+   this.carservice.getUsedCars().subscribe(
+     (response:Car[])=>{this.cars = response;},
+     (error:HttpErrorResponse)=>{alert(error.message);}
+   );
+ } 
+
+public getSearchResult(query:searchQuery)
+{
+  this.carservice.usedInventorySearch(query).subscribe(
+    (response:Car[])=>{this.cars = response;},
+    (error:HttpErrorResponse)=>{alert(error.message);}
+  );
+}
+
+  toggleCollapse()
+  {
+    this.isCollapsed = !this.isCollapsed;
   }
+
+  getSelectedCar(car: Car)
+  {
+    this.car = car;
+    this.toggleCollapse();
+  }
+
+
 
 }

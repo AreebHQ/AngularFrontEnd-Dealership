@@ -1,24 +1,16 @@
-<!-- Search Result Header -->
-<div class="container">
-    <br>
-    <div class="row">
-        <h3 class="col-12">Vehicle Detail</h3>
-    </div>
-    <hr class="rounded">
-</div>
+
 
 <!-- Search Result Card -->
 <div class="container">
     <div class="card">
         <div class="row">
             <div class="col-3"> <br>
-                <h5 class="card-title d-flex justify-content-center"> {{car.year }} {{car.make.name}} {{car.model.name}}
-                </h5>
+                <h5 class="card-title d-flex justify-content-center"> {{car.year }} {{car.make.name}} {{car.model.name}}</h5>
                 <img class="card-img-top" src="../../../assets/images/{{car.image}}" alt="Card image cap" />
             </div>
             <div class="col-3"> <br><br><br>
                 <div class="d-flex justify-content-center ">
-                    <h6 class="card-title">
+                    <h6 class="card-title"> 
                         <b> Body Style: </b> {{car.body.name}} <br><br>
                         <b> Trans: </b> {{car.transmission}}<br><br>
                         <b> Color: </b> {{car.bodyColor.name}}
@@ -28,24 +20,18 @@
             <div class="col-3"> <br><br><br>
                 <div class="d-flex justify-content-center ">
                     <h6 class="card-title"> <b> Interior: </b> {{car.interiorColor.name}} <br><br>
-                        <b> Mileage: </b> {{car.mileage}} <br><br>
-                        <b> VIN#: </b> {{car.vinNumber}}
+                       <b> Mileage: </b>  {{car.mileage}} <br><br>
+                        <b> VIN#: </b>  {{car.vinNumber}} 
                     </h6>
                 </div>
             </div>
             <div class="col-3">
                 <br><br><br>
-                <h5 class="card-title text-right"><b> Sale Price: </b> {{car.salePrice}} <br><br> <b> MRSP: </b>
-                    {{car.mrspPrice}}
+                <h5 class="card-title text-right"><b> Sale Price: </b> $ {{car.salePrice}}  <br><br> <b> MRSP: </b> $ {{car.mrspPrice}} 
                 </h5>
             </div>
-            <div class="row">
-                <div class="col-3"></div>
-                <div class="col-9"><b> Description: &nbsp;&nbsp;</b> {{car.description}} </div>
-                <br><br>
-            </div>
             <div class="col-12">
-                <button routerLink="/contactUs" class="btn btn-secondary float-right align-self-baseline" type="submit">Contact Us</button>
+                <button type="button"  (click)="onSelect(car)" class="btn btn-secondary float-right align-self-baseline col-2" >Details</button>
             </div>
         </div>
     </div>

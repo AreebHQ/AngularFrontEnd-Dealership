@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Car } from './Car';
 import { Message } from './Message';
 import { searchQuery } from './CarSearchQueryModel';
+import { Specials } from './Specials';
 
 
 
@@ -35,7 +36,7 @@ export class CarService {
   }
 
   public sendContactUsMessage(msg : Message) : Observable<Message> {
-    console.log("service called");
+    
     return this.http.post<Message>(`${this.apiServerUrl}/angular/contactus/message`, msg);
   }
 
@@ -44,6 +45,14 @@ export class CarService {
     return this.http.post<Car[]>(`${this.apiServerUrl}/angular/Inventory/searchNewInventory`,newCarSearchQuery);
   }
   
+  public usedInventorySearch(usedCarSearchQuery: searchQuery) : Observable<Car[]> {
 
+    return this.http.post<Car[]>(`${this.apiServerUrl}/angular/Inventory/searchUsedInventory`,usedCarSearchQuery);
+  }
+
+  public getSpecials() : Observable<Specials[]> {
+
+    return this.http.get<Specials[]>(`${this.apiServerUrl}/home/specials`);
+  }
 
 }

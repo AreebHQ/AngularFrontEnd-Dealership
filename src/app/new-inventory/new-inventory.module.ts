@@ -19,6 +19,9 @@ import { NewInventorySearchResultComponent } from './new-inventory-search-result
     CommonModule,
     NewInventoryRoutingModule,
     FormsModule
+  ],
+  exports: [
+    VehicleDetailComponent
   ]
 })
 export class NewInventoryModule { }

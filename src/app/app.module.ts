@@ -10,6 +10,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { UsedInventoryComponent } from './used-inventory/used-inventory.component';
 import { VehicleDetailComponent } from './used-inventory/vehicle-detail/vehicle-detail.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { SearchHeaderComponent } from './used-inventory/search-header/search-header.component';
+import { UsedInventorySearchResultComponent } from './used-inventory/used-inventory-search-result/used-inventory-search-result.component';
+import { SpecialsComponent } from './specials/specials.component';
+import { SpecialCardComponent } from './specials/special-card/special-card.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,10 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     UsedInventoryComponent,
     VehicleDetailComponent,
     ContactUsComponent,
+    SearchHeaderComponent,
+    UsedInventorySearchResultComponent,
+    SpecialsComponent,
+    SpecialCardComponent,
   ],
   imports: [
     BrowserModule,

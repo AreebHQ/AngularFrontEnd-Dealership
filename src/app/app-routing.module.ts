@@ -6,6 +6,7 @@ import { HomeComponent } from './new-inventory/new-invnetory-home/home.component
 import { SearchHeaderComponent } from './new-inventory/search-header/search-header.component';
 import { VehicleDetailComponent } from './new-inventory/vehicle-detail/vehicle-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SpecialsComponent } from './specials/specials.component';
 import { UsedInventoryComponent } from './used-inventory/used-inventory.component';
 
 const routes: Routes = [
@@ -24,7 +25,9 @@ const routes: Routes = [
     {path: `**`, redirectTo: `usedInventory`, pathMatch: `full`}
   ]},
   {path:`contactUs` , component: ContactUsComponent},
+  {path:`specials` , component: SpecialsComponent},
   {path: `**`, component: PageNotFoundComponent}
+  
 ];
 
 @NgModule({

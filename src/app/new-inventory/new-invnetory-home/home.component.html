@@ -1,17 +1,17 @@
 <div *ngIf="!isCollapsed">
-<!-- Vehicle Header -->
-<div class="container">
-    <br>
-    <div class="row">
-        <h3 class="col-12">New Vehicles</h3>
+    <!-- Vehicle Header -->
+    <div class="container">
+        <br>
+        <div class="row">
+            <h3 class="col-12">New Vehicles</h3>
+        </div>
+        <hr class="rounded">
     </div>
-    <hr class="rounded">
-</div>
-<!-- End Divider -->
+    <!-- End Divider -->
 
 
 
-     <!-- Search Box -->
+    <!-- Search Box -->
     <app-search-header></app-search-header>
     <!-- Search Result Header -->
     <div class="container">
@@ -21,9 +21,9 @@
         </div>
         <hr class="rounded">
     </div>
- <!-- End Search Result Header -->
+    <!-- End Search Result Header -->
 
-  <!-- Search Result Cards -->
+    <!-- Search Result Cards -->
     <app-new-inventory-search-result *ngFor="let car of cars" [car]="car"></app-new-inventory-search-result>
 </div>
 

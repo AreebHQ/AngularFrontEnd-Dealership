@@ -1,2 +1,33 @@
-<p>used-inventory works!</p>
+<div *ngIf="!isCollapsed">
+    <!-- Vehicle Header -->
+    <div class="container">
+        <br>
+        <div class="row">
+            <h3 class="col-12">Used Vehicles</h3>
+        </div>
+        <hr class="rounded">
+    </div>
+    <!-- End Divider -->
+
+
+
+    <!-- Search Box -->
+    <app-search-header></app-search-header>
+    <!-- Search Result Header -->
+    <div class="container">
+        <br>
+        <div class="row">
+            <h3 class="col-12">Search Result</h3>
+        </div>
+        <hr class="rounded">
+    </div>
+    <!-- End Search Result Header -->
+
+    <!-- Search Result Cards -->
+    <app-used-inventory-search-result *ngFor="let car of cars" [car]="car"></app-used-inventory-search-result>
+</div>
+
+
+
+<used-vehicle-detail [car]="car" *ngIf="isCollapsed"></used-vehicle-detail>
 <router-outlet></router-outlet> 
