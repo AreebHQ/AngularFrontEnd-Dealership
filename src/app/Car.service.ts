@@ -22,7 +22,7 @@ export class CarService {
 
   public getCars() : Observable<Car[]> {
 
-    return this.http.get<any>(`${this.apiServerUrl}/angular/sales/index`);
+    return this.http.get<any>(`${this.apiServerUrl}/angular/featured`);
   }
 
   public getNewCars() : Observable<Car[]> {
@@ -52,7 +52,17 @@ export class CarService {
 
   public getSpecials() : Observable<Specials[]> {
 
-    return this.http.get<Specials[]>(`${this.apiServerUrl}/home/specials`);
+    return this.http.get<Specials[]>(`${this.apiServerUrl}/angular/home/specials`);
   }
+
+  public getAllAvaiableVehicles() : Observable<Car[]> {
+    return this.http.get<Car[]>(`${this.apiServerUrl}/angular/sales/index`);
+  }
+
+  public availableVehiclesSearch(availableCarSearchQuery:searchQuery) : Observable<Car[]>{
+
+    return this.http.post<Car[]>(`${this.apiServerUrl}/angular/sales/searchVehicles`,availableCarSearchQuery);
+  }
+
 
 }

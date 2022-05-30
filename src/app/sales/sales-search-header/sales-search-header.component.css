@@ -1,0 +1,14 @@
+hr.rounded {
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
+}
+
+.card {
+    padding: 10px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+.minMaxDropdown {
+    margin: 5px;
+}

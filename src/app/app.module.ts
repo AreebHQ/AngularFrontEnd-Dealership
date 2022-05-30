@@ -14,6 +14,10 @@ import { SearchHeaderComponent } from './used-inventory/search-header/search-hea
 import { UsedInventorySearchResultComponent } from './used-inventory/used-inventory-search-result/used-inventory-search-result.component';
 import { SpecialsComponent } from './specials/specials.component';
 import { SpecialCardComponent } from './specials/special-card/special-card.component';
+import { SalesComponent } from './sales/sales.component';
+import { PurchaseComponent } from './sales/purchase/purchase.component';
+import { SalesSearchResultComponent } from './sales/sales-search-result/sales-search-result.component';
+import { SalesSearchHeaderComponent } from './sales/sales-search-header/sales-search-header.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,10 @@ import { SpecialCardComponent } from './specials/special-card/special-card.compo
     UsedInventorySearchResultComponent,
     SpecialsComponent,
     SpecialCardComponent,
+    SalesComponent,
+    PurchaseComponent,
+    SalesSearchResultComponent,
+    SalesSearchHeaderComponent,
   ],
   imports: [
     BrowserModule,

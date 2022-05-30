@@ -10,7 +10,7 @@ import { Specials } from '../Specials';
 })
 export class SpecialsComponent implements OnInit {
 
-  public special : Specials[];
+  public special : Specials[] = [];
 
   constructor(private carservice:CarService) { }
 

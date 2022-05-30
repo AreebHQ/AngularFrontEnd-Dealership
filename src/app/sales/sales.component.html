@@ -1,0 +1,32 @@
+<div *ngIf="!isCollapsed">
+    <!-- Vehicle Header -->
+    <div class="container">
+        <br>
+        <div class="row">
+            <h3 class="col-12">Sales</h3>
+        </div>
+        <hr class="rounded">
+    </div>
+    <!-- End Divider -->
+
+
+
+    <!-- Search Box -->
+    <app-sales-search-header></app-sales-search-header>
+    <!-- Search Result Header -->
+    <div class="container">
+        <br>
+        <div class="row">
+            <h3 class="col-12">Search Result</h3>
+        </div>
+        <hr class="rounded">
+    </div>
+    <!-- End Search Result Header -->
+
+    <!-- Search Result Cards -->
+    <app-sales-search-result *ngFor="let car of cars" [car]="car"></app-sales-search-result>
+</div>
+
+
+
+<app-purchase [car]="car" *ngIf="isCollapsed"></app-purchase>

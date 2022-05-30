@@ -13,7 +13,6 @@ export class UsedInventoryComponent implements OnInit {
 
   car : Car;
   isCollapsed: boolean = false;
-
   public cars : Car[] = [];
 
  constructor(private carservice:CarService) { }

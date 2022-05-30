@@ -1,0 +1,79 @@
+  <!-- Search Box Header -->
+
+
+  <div class="container">
+    <form (ngSubmit)="loadSearch()" #fSearch="ngForm">
+    <div class="form-group row justify-content-center">
+        <div class="form-outline col-4">
+        <label for="ex2"> Quick Search </label>
+            <input type="search" ngModel name="searchBar" class="form-control" placeholder="Enter Make - Model" aria-label="Search" />
+        </div>
+        
+        
+        
+         <!-- Price DropDown Header -->
+         <div class="col-3 ">
+           <label for="ex2"> Price </label><br>
+
+           <select (change)="selectMinPrice($event)" class="btn btn-secondary dropdown-toggle minMaxDropdown"  id="minPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <option selected="selected"  value="Min">Min</option>
+               <option value="5000">5000</option>
+               <option value="10000">10000</option>
+               <option value="15000">15000</option>
+               <option value="20000">20000</option>
+               <option value="25+">25+</option>
+           </select>
+
+
+           <select (change)="selectMaxPrice($event)" class="btn btn-secondary dropdown-toggle minMaxDropdown" id="maxPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <option selected="selected" value="Max">Max</option>
+               <option value="5000">5000</option>
+               <option value="10000">10000</option>
+               <option value="15000">15000</option>
+               <option value="20000">20000</option>
+               <option value="25+">25+</option>
+           </select>
+
+           </div> 
+        <!-- End Price DropDown Header -->
+         
+        
+    <!-- Price DropDown Header -->
+         <div class="col-3">
+           <label for="ex2"> Year </label><br>
+
+           <select  (change)="selectMinYear($event)" class="btn btn-secondary dropdown-toggle minMaxDropdown" id="minYear" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <option selected="selected dropdown-menu" value="Min">Min</option>
+               <option value="2000">2000</option>
+               <option value="2005">2005</option>
+               <option value="2010">2010</option>
+               <option value="2015">2015</option>
+               <option value="2020+">2020+</option>
+           </select>
+
+
+           <select  (change)="selectMaxYear($event)" class="btn btn-secondary dropdown-toggle minMaxDropdown" id="maxYear" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <option selected="dropdown-menu" value="Max">Max</option>
+               <option value="2000">2000</option>
+               <option value="2005">2005</option>
+               <option value="2010">2010</option>
+               <option value="2015">2015</option>
+               <option value="2020+">2020+</option>
+           </select>
+
+           </div> 
+        <!-- End Price DropDown Header -->
+          
+          
+   </div>
+     <div class="row justify-content-center">
+    <button class="btn btn-secondary col-3" type="submit" id="search-input" >Search</button>
+</div>
+
+ <hr class="rounded">
+ </form>
+</div>
+ <!-- End Search Box Header -->
+
+
+
