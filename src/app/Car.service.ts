@@ -6,6 +6,7 @@ import { Car } from './Car';
 import { Message } from './Message';
 import { searchQuery } from './CarSearchQueryModel';
 import { Specials } from './Specials';
+import { PurchaseQuery } from './PurchaseQueryModel';
 
 
 
@@ -64,5 +65,8 @@ export class CarService {
     return this.http.post<Car[]>(`${this.apiServerUrl}/angular/sales/searchVehicles`,availableCarSearchQuery);
   }
 
+  public purchaseVehicle(purchaseQuery:PurchaseQuery)  {
+    return this.http.post(`${this.apiServerUrl}/angular/sales/purchase`,purchaseQuery,{responseType: 'text'});
+  }
 
 }

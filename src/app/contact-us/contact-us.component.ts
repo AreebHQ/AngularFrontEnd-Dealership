@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CarService } from '../car.service';
 import { Message } from '../Message';
 
@@ -12,6 +13,7 @@ import { Message } from '../Message';
 export class ContactUsComponent implements OnInit {
   @ViewChild('contactForm', { static: false }) contactUsForm: NgForm;
 
+
   name : string;
   email : string;
   phone : number;
@@ -20,7 +22,7 @@ export class ContactUsComponent implements OnInit {
   msg : Message;
 
 
-  constructor(private carService : CarService) { }
+  constructor(private carService : CarService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -35,7 +37,9 @@ export class ContactUsComponent implements OnInit {
     
       this.msg = new Message(this.name,this.phone.toString(),this.email,this.subject,this.message);
       console.log(this.msg);
-     this.carService.sendContactUsMessage(this.msg).subscribe((result)=>{console.log(result)},(error:HttpErrorResponse)=>{console.log(error.message)});
+      this.carService.sendContactUsMessage(this.msg).subscribe((result)=>{
+       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => { this.router.navigate(['sales']); });},
+      (error:HttpErrorResponse)=>{console.log(error.message)});
   }
 
 }
