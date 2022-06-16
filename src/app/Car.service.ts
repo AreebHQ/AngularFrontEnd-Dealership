@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -7,6 +7,12 @@ import { Message } from './Message';
 import { searchQuery } from './CarSearchQueryModel';
 import { Specials } from './Specials';
 import { PurchaseQuery } from './PurchaseQueryModel';
+import { Make } from './Make';
+import { Model } from './Model';
+import { CarBody } from './CarBody';
+import { Color } from './Color';
+import { CarQueryModel } from './CarQueryModel';
+import { User } from './User';
 
 
 
@@ -69,4 +75,32 @@ export class CarService {
     return this.http.post(`${this.apiServerUrl}/angular/sales/purchase`,purchaseQuery,{responseType: 'text'});
   }
 
+  public editVehicle(vehicle:CarQueryModel) {
+    console.log('called editvehicle from service');
+    return this.http.post(`${this.apiServerUrl}/angular/admin/editVehicle`,vehicle);
+  }
+
+  public getAllMake() : Observable<Make[]> {
+    return this.http.get<Make[]>(`${this.apiServerUrl}/angular/admin/makes`);
+  }
+
+  public getAllModel() : Observable<Model[]> {
+    return this.http.get<Model[]>(`${this.apiServerUrl}/angular/admin/models`);
+  }
+
+  public getAllVehicleBodies() : Observable<CarBody[]> {
+    return this.http.get<CarBody[]>(`${this.apiServerUrl}/angular/admin/vehicleBodies`);
+  }
+
+  public getAllColors() : Observable<Color[]> {
+    return this.http.get<Color[]>(`${this.apiServerUrl}/angular/admin/vehicleColors`);
+  }
+
+  public addNewVehicle(vehicle:CarQueryModel) : Observable<Car>{
+    return this.http.post<Car>(`${this.apiServerUrl}/angular/admin/addVehicle`,vehicle);
+  }
+
+  public getAllUsers() : Observable<User[]>{
+    return this.http.get<User[]>(`${this.apiServerUrl}/angular/admin/users`);
+  }
 }

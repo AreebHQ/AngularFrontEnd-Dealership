@@ -1,0 +1,121 @@
+<div class="container" id="editVehicleHeader">
+    <br>
+    <div class="row">
+       <h3 class="col-12">Edit Vehicle</h3>
+    </div>
+    <hr class="rounded">
+</div>
+
+
+<div class="container" id="editForm">
+    <form (ngSubmit)="editVehicle(car.id)" #eForm="ngForm">
+        <div class="row" id="vehicle-info" >
+            <div class="col-lg-10">
+                <div class="form-row">
+                    <div class="col-md-6 form-group">
+                        <label for ="make">Make:</label>
+                        <select class="form-control" (change)="selectMake($event)" ngModel name="make">
+                         <option *ngFor="let make of makes" value="{{make?.id}}">{{make.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 form-group ">
+                        <label for ="model">Model:</label>
+                        <select class="form-control" (change)="selectModel($event)" ngModel name="model">
+                            <option *ngFor="let model of models" value="{{model?.id}}">{{model.name}}</option>
+                           </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 form-group">
+                        <label for ="type">Type:</label>
+                        <select class="form-control" id="carType" ngModel name="type" (change)="selectVehicleType($event)">
+                            <option value="New">New</option>
+                            <option value="Used">Used</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for ="body">Body Style:</label>
+                        <select class="form-control" (change)="selectBodyStyle($event)" ngModel name="body">
+                            <option *ngFor="let body of bodies" value="{{body.id}}">{{body.name}}</option>
+                           </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 form-group">
+                        <label for ="year">Year:</label>
+                        <input type="text" ngModel name="year" class="form-control" id="year" placeholder="Year" />
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for ="transmission">Transmission:</label>
+                        <select class="form-control" id="transmission" ngModel name="transmission"  (change)="selectTransmission($event)">
+                            <option value="Automatic">Automatic</option>
+                            <option value="Manual">Manual</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-6 form-group">
+                        <label for ="bodyColor">Color:</label>
+                        <select class="form-control" (change)="selectBodyColor($event)" ngModel name="bodyColor">
+                            <option *ngFor="let color of colors" value="{{color.id}}">{{color.name}}</option>
+                           </select>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for ="interiorColor">Interior:</label>
+                        <select class="form-control" (change)="selectInteriorColor($event)" ngModel name="interiorColor">
+                            <option *ngFor="let color of colors" value="{{color.id}}">{{color.name}}</option>
+                           </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-6 form-group">
+                        <label for ="mileage">Mileage:</label>
+                        <input type="text" ngModel name="mileage" class="form-control" id="mileage" placeholder="mileage" />
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for ="vin">Vin #:</label>
+                        <input type="text" class="form-control" ngModel name="vinNumber" id="vin" placeholder="vin" />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-6 form-group">
+                        <label for ="mrsp">MRSP:</label>
+                        <input type="text" ngModel name="mrspPrice" class="form-control" id="mrspPrice" placeholder="mrsp" />
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for ="salePrice">Sale Price:</label>
+                        <input type="text" class="form-control" ngModel name="salePrice" id="salePrice"
+                            placeholder="salePrice" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for ="description">Description:</label>
+                    <textarea class="form-control" id="description" ngModel name="description"
+                        placeholder="description"></textarea>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="col-md-6 form-group">
+
+                        <label class="form-label" for="imageFile">Edit Picture: </label>
+                        <input type="file" class="form-control" ngModel name="image"/>
+                    </div>
+                </div> <br>
+
+            
+             
+                    <button type="submit" id="deleteBtn" class="btn btn-danger col-2 addSaveButtons">Delete</button>
+                    <button type="submit" id="editBtn" class="btn btn-secondary col-2 addSaveButtons">Save</button>
+               
+
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<!-- Edit Vehicle Form -->

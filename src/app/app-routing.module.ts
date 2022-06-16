@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminAddNewVehicleComponent } from './admin/admin-add-new-vehicle/admin-add-new-vehicle.component';
+import { AdminEditVehicleComponent } from './admin/admin-edit-vehicle/admin-edit-vehicle.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { AdminSearchHeaderComponent } from './admin/admin-search-header/admin-search-header.component';
+import { AdminSearchResultComponent } from './admin/admin-search-result/admin-search-result.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FeaturedComponent } from './home/featured/featured.component';
 import { HomeComponent } from './new-inventory/new-invnetory-home/home.component';
@@ -11,6 +16,7 @@ import { SalesSearchResultComponent } from './sales/sales-search-result/sales-se
 import { SalesComponent } from './sales/sales.component';
 import { SpecialsComponent } from './specials/specials.component';
 import { UsedInventoryComponent } from './used-inventory/used-inventory.component';
+import { UsersHomeComponent } from './users/users-home/users-home.component';
 
 const routes: Routes = [
   {path: ``, redirectTo: `/home`, pathMatch: `full`},
@@ -35,6 +41,15 @@ const routes: Routes = [
     {path:`salesSearchResult`, component:SalesSearchResultComponent},
     {path: `**`, redirectTo: `sales`, pathMatch: `full`}
   ]},
+  {path: `admin`, component: AdminHomeComponent,
+  children: [
+    {path: `editVehicle` , component: AdminEditVehicleComponent},
+    {path: `searchHeader` , component: AdminSearchHeaderComponent},
+    {path: `addVehicle` , component: AdminAddNewVehicleComponent},
+    {path: `searchResult` , component: AdminSearchResultComponent},
+    {path: `**`, redirectTo: `admin`, pathMatch: `full`}
+  ]},
+  {path: `users`, component: UsersHomeComponent},
   {path: `**`, component: PageNotFoundComponent}
   
 ];

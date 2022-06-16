@@ -1,7 +1,7 @@
 import { Color } from "./Color";
 import { Make } from "./Make";
 import { Model } from "./Model";
-import { Body } from "./Body";
+import { CarBody } from "./CarBody";
 
 export interface Car{
     id: Number;
@@ -19,7 +19,7 @@ export interface Car{
     sold: boolean;
     bodyColor: Color;
     interiorColor: Color;
-    body: Body;
+    body: CarBody;
     model:Model;
 
     

@@ -1,0 +1,38 @@
+<div *ngIf="!editFormCollapsed">
+    <!-- Vehicle Header -->
+    <div class="container">
+        <br>
+        <div class="row">
+            
+            <div class="col-12">
+                <h3 class="float-left">Admin</h3>
+                <button type="button" (click)="showAddVechileForm()" class="btn btn-secondary float-right align-self-baseline col-2" >Add New Vehicle</button>
+            </div>
+        </div>
+        <hr class="rounded">
+    </div>
+    <!-- End Divider -->
+
+
+
+    <!-- Search Box -->
+  <app-admin-search-header></app-admin-search-header>
+    <!-- Search Result Header -->
+    <div class="container">
+        <br>
+        <div class="row">
+            <h3 class="col-12">Search Result</h3>
+        </div>
+        <hr class="rounded">
+    </div>
+    <!-- End Search Result Header -->
+
+    <!-- Search Result Cards -->
+  <app-admin-search-result *ngFor="let car of cars" [car]="car"></app-admin-search-result>
+</div>
+
+
+
+ <app-admin-edit-vehicle [car]="car" *ngIf="editFormCollapsed && !addFormCollapsed"></app-admin-edit-vehicle> 
+
+ <app-admin-add-new-vehicle  *ngIf="addFormCollapsed" ></app-admin-add-new-vehicle>

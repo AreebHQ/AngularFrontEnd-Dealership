@@ -1,0 +1,16 @@
+<div *ngIf="!addUserFormCollapsed">
+    <!-- Vehicle Header -->
+    <div class="container">
+        <br>
+        <div class="row">
+            
+            <div class="col-12">
+                <h3 class="float-left">Users</h3>
+                <button type="button" (click)="showAddUserForm()" class="btn btn-secondary float-right align-self-baseline col-2" >Add New User</button>
+            </div>
+        </div>
+        <hr class="rounded">
+    </div>
+    <!-- End Divider -->
+
+    <app-all-users-table></app-all-users-table>

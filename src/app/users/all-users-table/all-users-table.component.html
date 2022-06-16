@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row m-1 border">
+        <div class="col text-center m-3">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="userRows" *ngFor="let user of users">
+                    <tr>
+                        <td> {{user.firstName}}</td>
+                        <td>{{user.lastName}} </td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.role.roleName}} </td>
+                        <td><button type="submit" class="btn btn-secondary"
+                                (click)="showEditForm(user.id)">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

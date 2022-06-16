@@ -18,6 +18,8 @@ import { SalesComponent } from './sales/sales.component';
 import { PurchaseComponent } from './sales/purchase/purchase.component';
 import { SalesSearchResultComponent } from './sales/sales-search-result/sales-search-result.component';
 import { SalesSearchHeaderComponent } from './sales/sales-search-header/sales-search-header.component';
+import { AdminModule } from './admin/admin.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { SalesSearchHeaderComponent } from './sales/sales-search-header/sales-se
     HttpClientModule,
     HomeModule,
     NewInventoryModule,
+    AdminModule,
+    UsersModule,
     FormsModule
 
   ],
