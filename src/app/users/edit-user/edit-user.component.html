@@ -1,0 +1,56 @@
+    <!-- Edit User Header -->
+    <div class="container">
+        <br>
+        <div class="row">
+            
+            <div class="col-12">
+                <h3 class="float-left">Edit Users</h3>
+            </div>
+        </div>
+        <hr class="rounded">
+    </div>
+    <!-- End Header / Divider -->
+
+<div class="container">
+    <form (ngSubmit)="editUser(user.id)" #editUserForm="ngForm">
+    <div class="col-lg-10">   
+            <div class="form-row">
+             <div class="col-md-6 form-group">
+                <label for ="firstName">First Name:</label>
+                    <input type="text" ngModel name="firstName" class="form-control" id="firstName" placeholder="First Name" />
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for ="lastName">Last Name:</label>
+                    <input type="text" ngModel name="lastName" class="form-control" id="lastName" placeholder="Last Name" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    <label for ="email">Email:</label>
+                    <input type="email" ngModel name="email" class="form-control" id="email" placeholder="Email" />
+                </div>
+                    <div class="col-md-2 form-group">
+                        <label for ="userRole">Role:</label>
+                        <select class="form-control" id="userRole" ngModel name="userRole" (change)="selectUserRole($event)">
+                            <option value="1">Sales</option>
+                            <option value="2">Admin</option>
+                            <option value="3">Disable</option>
+                        </select>
+                    </div>
+            </div>
+        
+            <div class="form-row">
+             <div class="col-md-6 form-group">
+                <label for ="password">Password:</label>
+                    <input type="text" ngModel name="password" class="form-control" id="password" placeholder="Password" />
+                </div>
+              <div class="col-md-6 form-group">
+                    <label for ="confirmPassword">Confirm Password:</label>
+                    <input type="text" ngModel name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Confirm Password" />
+                </div>
+            </div>
+            
+            <button type="submit" id="saveBtn"class="btn btn-secondary col-2">Save</button>
+    </div>
+</form>
+</div>

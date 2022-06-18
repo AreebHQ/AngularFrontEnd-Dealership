@@ -48,6 +48,38 @@ export class AdminEditVehicleComponent implements OnInit {
     
   }
 
+
+  ngOnInit(): void {
+    this.getMakes();
+    this.getModels();
+    this.getVehicleBodies();
+    this.getColors();
+    
+    //setting car information in form
+    setTimeout(() => {
+     this.editForm.setValue({
+       make:this.car.make.id,
+       model:this.car.model.id,
+       type:this.car.type,
+       body:this.car.body.id,
+       year:this.car.year,
+       transmission:this.car.transmission,
+       bodyColor:this.car.bodyColor.id,
+       interiorColor:this.car.interiorColor.id,
+       mileage: this.car.mileage,
+       vinNumber:this.car.vinNumber,
+       mrspPrice:this.car.mrspPrice,
+       salePrice:this.car.salePrice,
+       description:this.car.description,
+       image:''
+
+      }); 
+    });
+    
+    
+  }
+
+  
   public editVehicle(vehicleId:Number){
      
     this.editCar.id = vehicleId;
@@ -79,36 +111,6 @@ export class AdminEditVehicleComponent implements OnInit {
       );
 }
 
-
-  ngOnInit(): void {
-    this.getMakes();
-    this.getModels();
-    this.getVehicleBodies();
-    this.getColors();
-    
-    //setting car information in form
-    setTimeout(() => {
-     this.editForm.setValue({
-       make:this.car.make.id,
-       model:this.car.model.id,
-       type:this.car.type,
-       body:this.car.body.id,
-       year:this.car.year,
-       transmission:this.car.transmission,
-       bodyColor:this.car.bodyColor.id,
-       interiorColor:this.car.interiorColor.id,
-       mileage: this.car.mileage,
-       vinNumber:this.car.vinNumber,
-       mrspPrice:this.car.mrspPrice,
-       salePrice:this.car.salePrice,
-       description:this.car.description,
-       image:''
-
-      }); 
-    });
-    
-    
-  }
 
   public selectBodyColor(event:any)
   {

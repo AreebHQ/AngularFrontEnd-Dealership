@@ -103,4 +103,7 @@ export class CarService {
   public getAllUsers() : Observable<User[]>{
     return this.http.get<User[]>(`${this.apiServerUrl}/angular/admin/users`);
   }
+  public addNewUser(newUser:any) : Observable<User> {
+    return this.http.post<User>(`${this.apiServerUrl}/angular/admin/addUser`,newUser);
+  }
 }

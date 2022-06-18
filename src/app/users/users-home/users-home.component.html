@@ -1,4 +1,4 @@
-<div *ngIf="!addUserFormCollapsed">
+<div *ngIf="!editUserFormCollapsed && !addUserFormCollapsed">
     <!-- Vehicle Header -->
     <div class="container">
         <br>
@@ -6,11 +6,14 @@
             
             <div class="col-12">
                 <h3 class="float-left">Users</h3>
-                <button type="button" (click)="showAddUserForm()" class="btn btn-secondary float-right align-self-baseline col-2" >Add New User</button>
+                <button type="button" (click)="toggleAddUserFormCollapse()" class="btn btn-secondary float-right align-self-baseline col-2" >Add New User</button>
             </div>
         </div>
         <hr class="rounded">
     </div>
     <!-- End Divider -->
 
-    <app-all-users-table></app-all-users-table>
+    <app-all-users-table  [user]="user" ></app-all-users-table>
+</div>
+<app-edit-user *ngIf="editUserFormCollapsed"  [user]="user"></app-edit-user>
+<app-add-user *ngIf="addUserFormCollapsed"></app-add-user>

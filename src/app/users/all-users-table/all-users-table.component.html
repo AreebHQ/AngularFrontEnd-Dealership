@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row m-1 border">
-        <div class="col text-center m-3">
-            <table class="table table-striped">
+        <div class="col text-center m-3 ">
+            <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>First Name</th>
@@ -17,8 +17,7 @@
                         <td>{{user.lastName}} </td>
                         <td>{{user.email}}</td>
                         <td>{{user.role.roleName}} </td>
-                        <td><button type="submit" class="btn btn-secondary"
-                                (click)="showEditForm(user.id)">Edit</button></td>
+                        <td><button type="submit" class="btn btn-secondary" (click)="showEditForm(user)">Edit</button></td>
                     </tr>
                 </tbody>
             </table>
