@@ -50,7 +50,8 @@
                 </div>
             </div>
             
-            <button type="submit" id="saveBtn"class="btn btn-secondary col-2">Save</button>
+            <button type="submit" class="btn btn-secondary col-2 deleteSaveButtons">Save</button>
+            <button type="button" (click)="deleteUser(user.id)"  id="deleteUser" class="btn btn-danger col-2 deleteSaveButtons">Delete</button>
     </div>
 </form>
 </div>

@@ -36,6 +36,12 @@ export class AddUserComponent implements OnInit {
     console.log(this.userRole);
   }
 
+  public cancelButton()
+  {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['users']);});
+  }
+
   public addUser(){
     this.userRole = this.addUserForm.value.userRole;
     this.firstName = this.addUserForm.value.firstName;

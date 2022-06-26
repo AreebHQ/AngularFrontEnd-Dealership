@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { CarService } from 'src/app/car.service';
+import { CarQueryModel } from 'src/app/CarQueryModel';
 import { User } from 'src/app/User';
 
 @Component({
@@ -20,7 +22,7 @@ export class EditUserComponent implements OnInit {
   password:string;
   confirmPassword:string;
 
-  constructor() { }
+  constructor(private carservice:CarService) { }
 
   ngOnInit(): void {
 
@@ -39,8 +41,17 @@ export class EditUserComponent implements OnInit {
        });
   }
 
-  public editUser(userId:number){}
+  public editUser(userId:number){
+ console.log(userId);
 
+  }
+
+  public deleteUser(userId:number)
+  {
+  console.log(userId);
+  this.carservice.deleteUser(userId);
+
+  }
 
   public selectUserRole(event:any)
   {

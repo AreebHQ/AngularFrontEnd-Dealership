@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Car } from './Car';
@@ -106,4 +106,12 @@ export class CarService {
   public addNewUser(newUser:any) : Observable<User> {
     return this.http.post<User>(`${this.apiServerUrl}/angular/admin/addUser`,newUser);
   }
+
+  public deleteUser(userId:number) : void {
+    console.log(userId + 'from service');
+    let param1 = new HttpParams().set(`userId`,userId);
+    this.http.post(`${this.apiServerUrl}/angular/admin/deleteUser`, 666);
+  }
+
+
 }
