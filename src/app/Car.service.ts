@@ -29,82 +29,82 @@ export class CarService {
 
   public getCars() : Observable<Car[]> {
 
-    return this.http.get<any>(`${this.apiServerUrl}/angular/featured`);
+    return this.http.get<any>(`${this.apiServerUrl}/featured`);
   }
 
   public getNewCars() : Observable<Car[]> {
 
-    return this.http.get<any>(`${this.apiServerUrl}/angular/Inventory/new`);
+    return this.http.get<any>(`${this.apiServerUrl}/Inventory/new`);
   }
 
   public getUsedCars() : Observable<Car[]> {
 
-    return this.http.get<any>(`${this.apiServerUrl}/angular/Inventory/used`);
+    return this.http.get<any>(`${this.apiServerUrl}/Inventory/used`);
   }
 
   public sendContactUsMessage(msg : Message) : Observable<Message> {
     
-    return this.http.post<Message>(`${this.apiServerUrl}/angular/contactus/message`, msg);
+    return this.http.post<Message>(`${this.apiServerUrl}/contactus/message`, msg);
   }
 
   public newInventorySearch(newCarSearchQuery: searchQuery) : Observable<Car[]> {
 
-    return this.http.post<Car[]>(`${this.apiServerUrl}/angular/Inventory/searchNewInventory`,newCarSearchQuery);
+    return this.http.post<Car[]>(`${this.apiServerUrl}/Inventory/searchNewInventory`,newCarSearchQuery);
   }
   
   public usedInventorySearch(usedCarSearchQuery: searchQuery) : Observable<Car[]> {
 
-    return this.http.post<Car[]>(`${this.apiServerUrl}/angular/Inventory/searchUsedInventory`,usedCarSearchQuery);
+    return this.http.post<Car[]>(`${this.apiServerUrl}/Inventory/searchUsedInventory`,usedCarSearchQuery);
   }
 
   public getSpecials() : Observable<Specials[]> {
 
-    return this.http.get<Specials[]>(`${this.apiServerUrl}/angular/home/specials`);
+    return this.http.get<Specials[]>(`${this.apiServerUrl}/home/specials`);
   }
 
   public getAllAvaiableVehicles() : Observable<Car[]> {
-    return this.http.get<Car[]>(`${this.apiServerUrl}/angular/sales/index`);
+    return this.http.get<Car[]>(`${this.apiServerUrl}/sales/index`);
   }
 
   public availableVehiclesSearch(availableCarSearchQuery:searchQuery) : Observable<Car[]>{
 
-    return this.http.post<Car[]>(`${this.apiServerUrl}/angular/sales/searchVehicles`,availableCarSearchQuery);
+    return this.http.post<Car[]>(`${this.apiServerUrl}/sales/searchVehicles`,availableCarSearchQuery);
   }
 
   public purchaseVehicle(purchaseQuery:PurchaseQuery)  {
-    return this.http.post(`${this.apiServerUrl}/angular/sales/purchase`,purchaseQuery,{responseType: 'text'});
+    return this.http.post(`${this.apiServerUrl}/sales/purchase`,purchaseQuery,{responseType: 'text'});
   }
 
   public editVehicle(vehicle:CarQueryModel) {
     console.log('called editvehicle from service');
-    return this.http.post(`${this.apiServerUrl}/angular/admin/editVehicle`,vehicle);
+    return this.http.post(`${this.apiServerUrl}/admin/editVehicle`,vehicle);
   }
 
   public getAllMake() : Observable<Make[]> {
-    return this.http.get<Make[]>(`${this.apiServerUrl}/angular/admin/makes`);
+    return this.http.get<Make[]>(`${this.apiServerUrl}/admin/makes`);
   }
 
   public getAllModel() : Observable<Model[]> {
-    return this.http.get<Model[]>(`${this.apiServerUrl}/angular/admin/models`);
+    return this.http.get<Model[]>(`${this.apiServerUrl}/admin/models`);
   }
 
   public getAllVehicleBodies() : Observable<CarBody[]> {
-    return this.http.get<CarBody[]>(`${this.apiServerUrl}/angular/admin/vehicleBodies`);
+    return this.http.get<CarBody[]>(`${this.apiServerUrl}/admin/vehicleBodies`);
   }
 
   public getAllColors() : Observable<Color[]> {
-    return this.http.get<Color[]>(`${this.apiServerUrl}/angular/admin/vehicleColors`);
+    return this.http.get<Color[]>(`${this.apiServerUrl}/admin/vehicleColors`);
   }
 
   public addNewVehicle(vehicle:CarQueryModel) : Observable<Car>{
-    return this.http.post<Car>(`${this.apiServerUrl}/angular/admin/addVehicle`,vehicle);
+    return this.http.post<Car>(`${this.apiServerUrl}/admin/addVehicle`,vehicle);
   }
 
   public getAllUsers() : Observable<User[]>{
-    return this.http.get<User[]>(`${this.apiServerUrl}/angular/admin/users`);
+    return this.http.get<User[]>(`${this.apiServerUrl}/admin/users`);
   }
   public addNewUser(newUser:any) : Observable<User> {
-    return this.http.post<User>(`${this.apiServerUrl}/angular/admin/addUser`,newUser);
+    return this.http.post<User>(`${this.apiServerUrl}/admin/addUser`,newUser);
   }
 
   public deleteUser(userId:number) : void {

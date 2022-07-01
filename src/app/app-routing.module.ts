@@ -7,6 +7,8 @@ import { AdminSearchHeaderComponent } from './admin/admin-search-header/admin-se
 import { AdminSearchResultComponent } from './admin/admin-search-result/admin-search-result.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FeaturedComponent } from './home/featured/featured.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 import { HomeComponent } from './new-inventory/new-invnetory-home/home.component';
 import { SearchHeaderComponent } from './new-inventory/search-header/search-header.component';
 import { VehicleDetailComponent } from './new-inventory/vehicle-detail/vehicle-detail.component';
@@ -14,6 +16,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PurchaseComponent } from './sales/purchase/purchase.component';
 import { SalesSearchResultComponent } from './sales/sales-search-result/sales-search-result.component';
 import { SalesComponent } from './sales/sales.component';
+import { AuthGuardService } from './service/auth-guard.service';
 import { SpecialsComponent } from './specials/specials.component';
 import { UsedInventoryComponent } from './used-inventory/used-inventory.component';
 import { UsersHomeComponent } from './users/users-home/users-home.component';
@@ -49,6 +52,8 @@ const routes: Routes = [
     {path: `searchResult` , component: AdminSearchResultComponent},
     {path: `**`, redirectTo: `admin`, pathMatch: `full`}
   ]},
+  {path:`login`, component: LoginComponent},
+  {path:`logout`, component: LogoutComponent,canActivate:[AuthGuardService] },
   {path: `users`, component: UsersHomeComponent},
   {path: `**`, component: PageNotFoundComponent}
   

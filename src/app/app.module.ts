@@ -20,6 +20,9 @@ import { SalesSearchResultComponent } from './sales/sales-search-result/sales-se
 import { SalesSearchHeaderComponent } from './sales/sales-search-header/sales-search-header.component';
 import { AdminModule } from './admin/admin.module';
 import { UsersModule } from './users/users.module';
+import { LoginComponent } from './login/login.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,8 @@ import { UsersModule } from './users/users.module';
     PurchaseComponent,
     SalesSearchResultComponent,
     SalesSearchHeaderComponent,
+    LoginComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,8 @@ import { UsersModule } from './users/users.module';
     NewInventoryModule,
     AdminModule,
     UsersModule,
-    FormsModule
+    FormsModule,
+    NoopAnimationsModule
 
   ],
   providers: [],
