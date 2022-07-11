@@ -22,7 +22,7 @@ import { User } from './User';
 
 export class CarService {
 
-  private apiServerUrl='http://localhost:8080';
+  private apiServerUrl='http://localhost:8080/api';
 
   constructor(private http: HttpClient) { }
 
@@ -34,12 +34,12 @@ export class CarService {
 
   public getNewCars() : Observable<Car[]> {
 
-    return this.http.get<any>(`${this.apiServerUrl}/Inventory/new`);
+    return this.http.get<any>(`${this.apiServerUrl}/inventory/new`);
   }
 
   public getUsedCars() : Observable<Car[]> {
 
-    return this.http.get<any>(`${this.apiServerUrl}/Inventory/used`);
+    return this.http.get<any>(`${this.apiServerUrl}/inventory/used`);
   }
 
   public sendContactUsMessage(msg : Message) : Observable<Message> {
@@ -49,12 +49,12 @@ export class CarService {
 
   public newInventorySearch(newCarSearchQuery: searchQuery) : Observable<Car[]> {
 
-    return this.http.post<Car[]>(`${this.apiServerUrl}/Inventory/searchNewInventory`,newCarSearchQuery);
+    return this.http.post<Car[]>(`${this.apiServerUrl}/inventory/searchNewInventory`,newCarSearchQuery);
   }
   
   public usedInventorySearch(usedCarSearchQuery: searchQuery) : Observable<Car[]> {
 
-    return this.http.post<Car[]>(`${this.apiServerUrl}/Inventory/searchUsedInventory`,usedCarSearchQuery);
+    return this.http.post<Car[]>(`${this.apiServerUrl}/inventory/searchUsedInventory`,usedCarSearchQuery);
   }
 
   public getSpecials() : Observable<Specials[]> {
@@ -63,7 +63,7 @@ export class CarService {
   }
 
   public getAllAvaiableVehicles() : Observable<Car[]> {
-    return this.http.get<Car[]>(`${this.apiServerUrl}/sales/index`);
+    return this.http.get<any>(`${this.apiServerUrl}/sales/index`);
   }
 
   public availableVehiclesSearch(availableCarSearchQuery:searchQuery) : Observable<Car[]>{
@@ -81,19 +81,19 @@ export class CarService {
   }
 
   public getAllMake() : Observable<Make[]> {
-    return this.http.get<Make[]>(`${this.apiServerUrl}/admin/makes`);
+    return this.http.get<Make[]>(`${this.apiServerUrl}/sales/makes`);
   }
 
   public getAllModel() : Observable<Model[]> {
-    return this.http.get<Model[]>(`${this.apiServerUrl}/admin/models`);
+    return this.http.get<Model[]>(`${this.apiServerUrl}/sales/models`);
   }
 
   public getAllVehicleBodies() : Observable<CarBody[]> {
-    return this.http.get<CarBody[]>(`${this.apiServerUrl}/admin/vehicleBodies`);
+    return this.http.get<CarBody[]>(`${this.apiServerUrl}/sales/vehicleBodies`);
   }
 
   public getAllColors() : Observable<Color[]> {
-    return this.http.get<Color[]>(`${this.apiServerUrl}/admin/vehicleColors`);
+    return this.http.get<Color[]>(`${this.apiServerUrl}/sales/vehicleColors`);
   }
 
   public addNewVehicle(vehicle:CarQueryModel) : Observable<Car>{

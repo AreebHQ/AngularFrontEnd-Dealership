@@ -1,6 +1,6 @@
 
- <div class="container" id="navigationBar" name="navigationBar">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <ul class="navbar-nav col-8">
             <a class="navbar-brand" href="#"> <img src="../assets/images/homeicon.jpeg" alt="Logo" style="width:40px;"></a>
             <li class="nav-item"  routerinkactive="active current">
@@ -18,24 +18,23 @@
             <li class="nav-item "  routerinkactive="active current">
                 <a class="nav-link"  routerLink="/contactUs">Contact</a>
             </li>
-            <li  *ngIf="!loginService.isUserLoggedIn()" class="nav-item"  routerinkactive="active current">
+            <li  *ngIf="showSalesUser || showAdminUser" class="nav-item"  routerinkactive="active current">
                 <a class="nav-link"  routerLink="/sales">Sales</a>
             </li>
-            <li *ngIf="!loginService.isUserLoggedIn()" class="nav-item"  routerinkactive="active current"> 
+            <li *ngIf="showAdminUser" class="nav-item"  routerinkactive="active current"> 
                 <a class="nav-link"  routerLink="/admin">Admin</a>
             </li>
-            <li *ngIf="!loginService.isUserLoggedIn()" class="nav-item"  routerinkactive="active current">
+            <li *ngIf="showAdminUser" class="nav-item"  routerinkactive="active current">
                 <a class="nav-link"  routerLink="/users">Users</a>
             </li>
-           
         </ul>
        
-         <div class="col-4"><button *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="btn btn-outline-secondary float-right" type="submit">LogIn</button>
-            <button *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="btn btn-outline-secondary float-right" type="submit">LogOut</button> </div>
+         <div class="col-4"><button *ngIf="!isLoggedIn" routerLink="/login" class="btn btn-outline-secondary float-right" type="submit">LogIn</button>
+            <button *ngIf="isLoggedIn"  (click)="logout()" class="btn btn-outline-secondary float-right" type="submit">LogOut</button> </div>
          
         
     </nav>
-</div> 
+
 
 
 <router-outlet></router-outlet>

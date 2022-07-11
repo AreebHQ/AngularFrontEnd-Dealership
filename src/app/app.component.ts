@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from './service/authentication.service';
+import { TokenStorageService } from './service/token-storage.service';
 
 
 @Component({
@@ -11,9 +11,24 @@ import { AuthenticationService } from './service/authentication.service';
 export class AppComponent {
   title = 'dealership-app';
 
-  constructor (private router:Router, public loginService:AuthenticationService){
-   
-      this.router.navigate(['home']);
+  private roles: string[] = [];
+  isLoggedIn = false;
+  showAdminUser = false;
+  showSalesUser = false;
+  username?: string;
+  constructor(private tokenStorageService: TokenStorageService) { }
+  ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+      this.showAdminUser = this.roles.includes('Admin');
+      this.showSalesUser = this.roles.includes('Sales');
+      this.username = user.username;
+    }
+  }
+  logout(): void {
+    this.tokenStorageService.signOut();
+    window.location.reload();
   }
 }
-

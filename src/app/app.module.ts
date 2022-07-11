@@ -22,7 +22,7 @@ import { AdminModule } from './admin/admin.module';
 import { UsersModule } from './users/users.module';
 import { LoginComponent } from './login/login.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { LogoutComponent } from './logout/logout.component';
+import { authInterceptorProviders } from './helper/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,7 @@ import { LogoutComponent } from './logout/logout.component';
     SalesSearchResultComponent,
     SalesSearchHeaderComponent,
     LoginComponent,
-    LogoutComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -54,7 +54,7 @@ import { LogoutComponent } from './logout/logout.component';
     NoopAnimationsModule
 
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

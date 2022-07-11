@@ -2,7 +2,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../service/authentication.service';
+import { AuthService } from '../service/auth.service';
+import { TokenStorageService } from '../service/token-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -11,44 +12,39 @@ import { AuthenticationService } from '../service/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-
-  username = 'Adam@gmail.com';
-  password = 'Adam123';
-  invalidLogin = false;
-
-  constructor(private router:Router, private loginservice: AuthenticationService, private http:HttpClient) { }
-
+  form: any = {
+    username: null,
+    password: null
+  };
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
   ngOnInit(): void {
- //  this.checkLogin();
-
-    // this.checkLogin(this.username,this.password);
+    if (this.tokenStorage.isLoggedIn()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getUser().roles;
+    }
   }
-  checkLogin()
-  {
-    this.login("a", "a");
+  onSubmit(): void {
+    const { username, password } = this.form;
+    this.authService.login(username, password).subscribe({
+      next: data => {
+        this.tokenStorage.saveToken(data.token);
+        this.tokenStorage.saveUser(data);
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getUser().roles;
+        this.reloadPage();
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    });
   }
-
-  public login(username:string, password:string) {
-    username = 'Adam@gmail.com';
-    password = 'Adam123';
-    console.log("login called from authentication serice");
-  //  const headers=new HttpHeaders({Authorization: ("Adam@gmail.com"+":"+"Adam123")})
-    return this.http.post("http://localhost:8080/login",{username,password});
+  reloadPage(): void {
+    window.location.reload();
   }
-
-
-
- /* checkLogin() {
-    console.log(`check login called from login component`);
-
-  if (this.loginservice.authenticate(this.username, this.password)
-    ) {
-      this.invalidLogin = false;
-      this.router.navigate(['/home']);
-     
-    } else
-      this.invalidLogin = true 
-  }*/
-
-
 }
