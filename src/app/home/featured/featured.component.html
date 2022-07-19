@@ -1,6 +1,6 @@
      <!-- Banner -->
   <div class="container">
-    <div class="jumbotron jumbotron-fluid" style="background-image: url(../../../assets/images/banner.jpg);">
+    <div class="jumbotron jumbotron-fluid" style="background-image: url(assets/images/banner.jpg);">
     <br><br><br>
     
         
@@ -13,7 +13,7 @@
     <div class="row"> 
         <div class="card-group d-flex justify-content-center">
            <div class="col-3 card-deck text-center" *ngFor="let car of cars">
-                <img class="card-img-top" src="../assets/{{car.image}}" alt="Card image cap">
+                <img class="card-img-top" src="assets/{{car.image}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"> {{car.year}} </h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{car.model.name}}</h6>
