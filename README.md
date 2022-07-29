@@ -1,27 +1,157 @@
-# DealershipApp
+# Project FrontEnd Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1> Car Dealership [Java + Springboot + Bootstrap + Javascript]</h1>
+<p>
+<b> All contents in this project are solely for learning purpose. :) </b>
+<br>
+<br>
+<div class="info"> <font color="#303030">
+<h2> <b>Introduction</b> </h2>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+•	A Full Stack project built from scratch, from Database Design and Data Modeling to User responsive webpages, for a Car Dealership. 
+•	Using Spring boot, REST API design, JPA to query data from SQL cloud database through AJAX calls, Bootstrap and JavaScript to display web content.  
 
-## Build
+  <b>In Progress....!!</b>
+<br> <br>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<br><br></font></div> 
+</p>
+<br><br>
+<br><br>
+<h1>UI - Pages</h1>
 
-## Running unit tests
+<h2> Home </h2>
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/k4v74DF/Home.png" alt="SignIn" width="900" height="620">
+  </div>
+</div>
+  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  <h2> New Inventory </h2>
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/CBsCx15/New-Inventory.png" alt="SignIn" width="900" height="620">
+  </div>
+</div>
+  
+  <br>
+  <h2> Used Inventory </h2>
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/myw5Mbw/Used-Inventory.png" alt="SignIn" width="900" height="620">
+  </div>
+</div>
+  
+  
+  <br>
+  
+  <h2> Vehicle Details </h2>
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/Q9vFgv4/Details.png" alt="SignIn" width="900" height="620">
+  </div>
+</div>
+  
+  <br>
+  
+ 
+  <h2> Specials </h2>
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/YfdCs8H/Specials.png" alt="SignIn" width="900" height="620">
+  </div>
+</div>
+  
+  <br>
+    
+  <h2> Contact Us </h2>
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/XzS1Shg/Contact-Us.png" alt="SignIn" width="900" height="620">
+  </div>
+</div>
+  
+  
+  
+    <br>
+     
+  <h2> Sales </h2>
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/09m2SxD/Sales.png" alt="SignIn" width="900" height="620">
+  </div>
+</div>
+  
+  
+  <br>
+      
+      
+  <h2> Purchase Vehicle </h2>
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/h9QXvwV/Purchase.png" alt="SignIn" width="900" height="620">
+  </div>
+</div>
+  
+  <br>
+      
+  <h2> Admin </h2>
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/234cYsY/Admin.png" alt="SignIn" width="900" height="620">
+  </div>
+</div>
+  
+  
+  
+       
+  <h2> Add Vehicle </h2>
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/wpmWd01/Add-Vehicle.png" alt="SignIn" width="900" height="620">
+  </div>
+</div>
+  
+  
+  
+ 
+    
+           
+  <h2> Edit Vehicle </h2>
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/tp604pC/Edit-Vehicle.png" alt="SignIn" width="900" height="620">
+  </div>
+</div>
+  
+  
+  
+           
+  <h2> Users </h2>
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/sstZBfG/Users.png" alt="SignIn" width="900" height="620">
+  </div>
+</div>
+  
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  
+             
+  <h2> Add User </h2>
+<div class="row">
+  <div class="column">
+    <img src="https://i.ibb.co/WxG1qgM/AddUser.png" alt="SignIn" width="900" height="620">
+  </div>
+</div>
+  
+  </body>
+  </html>
