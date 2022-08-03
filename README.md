@@ -16,8 +16,8 @@
 <div class="info"> <font color="#303030">
 <h2> <b>Introduction</b> </h2>
 
-•	A Full Stack project built from scratch, from Database Design and Data Modeling to User responsive webpages, for a Car Dealership. 
-•	Using Spring boot, REST API design, JPA to query data from SQL cloud database through AJAX calls, Bootstrap and JavaScript to display web content.  
+•	Angular Frontend for a Full Stack project built from scratch, from Database Design and Data Modeling to User responsive webpages, for a Car Dealership. 
+•	Using Spring boot, REST API design, JPA to query data from SQL database.  
 
   <b>In Progress....!!</b>
 <br> <br>
