@@ -8,7 +8,7 @@
 <head>
 </head>
 <body>
-<h1> Car Dealership [Java + Springboot + Bootstrap + Javascript]</h1>
+<h1> Car Dealership [Java + Springboot + Angular]</h1>
 <p>
 <b> All contents in this project are solely for learning purpose. :) </b>
 <br>
